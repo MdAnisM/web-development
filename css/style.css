@@ -90,13 +90,6 @@ main > section:first-child button:hover {
 
 
 
-
-
-
-
-
-
-
 /* General Background and Text */
 body {
     background-color: var(--background);
@@ -180,4 +173,54 @@ footer {
     margin-top: 30px;
     border-radius: 10px 10px 0 0;
     box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+/* IPL Teams Section */
+#matcheslist {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Section Heading */
+#matcheslist h3 {
+    color: var(--primary);
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* Dropdown Styling */
+#matcheslist select {
+    width: 300px;
+    padding: 14px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary);
+    background-color: white;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+}
+
+#matcheslist select:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 12px rgba(249, 115, 22, 0.3);
+}
+
+#matcheslist select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 12px rgba(249, 115, 22, 0.4);
+}
+
+#matcheslist select option {
+    background-color: white;
+    color: var(--primary);
+    font-weight: bold;
 }

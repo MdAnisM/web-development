@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,13 +7,13 @@
     </head>
     <body>
         <header>
-            
+
             <nav>
                 <ul>
                     <li><a href="#">Matches</a></li>
-                    <li><a href="#">Book ticket</a></li>
+                    <li><a href="booking.html">Book ticket</a></li>
                     <li><a href="#">My Bookings</a></li>
-                    <li><a href="#">Guidelines</a></li>
+                    <li><a href="#guide">Guidelines</a></li>
                  </ul>
             </nav>
         </header>
@@ -20,11 +21,15 @@
             <section>
                 <img src="assets\ipl2026.png" alt="IPL 2026" width="100%">
                 <h3>Experience The Stadium Energy Live!</h3 >
-                <button type="submit">View Schedule</button>
-                <button type="submit">Book Ticket</button>
+                <a href=#schedule>
+                 <button type="submit">View Schedule</button>
+                </a>
+                <a href="booking.html">
+                    <button type="button">Book Ticket</button>
+                </a>
             </section>
             <section>
-                <h3> About IPL MATCHES 2026 </h3>
+                <h3> Top IPL  2026  Teams</h3>
                 <form id="matcheslist">
                   <select>
                     <option value="">List of popular matches</option>
@@ -37,9 +42,9 @@
                 </form>
             </section>
             <br>
-            <section>
+            <section id="schedule">
                 <h3>Match Schedule</h3>
-                <table border="1">
+                <table *border*="1">
                   <tr>
                     <th>Match Number</th>
                     <th>Teams</th>
@@ -54,7 +59,7 @@
                     <td>2026-04-01 19:30</td>
                     <td>Mumbai</td>
                     <td>₹5,000</td>
-                    <td><button type="submit">Book Now</button></td>
+                    <td><a href="booking.html"><button type="button">Book Now</button></a></td>
                   </tr>
                   <tr>
                     <td>2</td>
@@ -62,7 +67,7 @@
                     <td>2026-04-02 19:30</td>
                     <td>Delhi</td>
                     <td>₹5,000</td>
-                    <td><button type="submit">Book Now</button></td>
+                    <td><a href="booking.html"><button type="button">Book Now</button></a></td>
                   </tr>
                   <tr>
                     <td>3</td>
@@ -70,7 +75,7 @@
                     <td>2026-04-03 19:30</td>
                     <td>Chennai</td>
                     <td>₹5,000</td>
-                    <td><button type="submit">Book Now</button></td>
+                    <td><a href="booking.html"><button type="button">Book Now</button></a></td>
                   </tr>
                   <tr>
                     <td>4</td>
@@ -78,40 +83,13 @@
                     <td>2026-04-04 19:30</td>
                     <td>Chandigarh</td>
                     <td>₹5,000</td>
-                    <td><button type="submit">Book Now</button></td>
+                    <td><a href="booking.html"><button type="button">Book Now</button></a></td>
                   </tr>
                 </table>
             </section>
-            <section>
-                <h2>Ticket Booking </h2>
-                <form id="bookings">
-                    <label for="name">Full Name:</label>
-                    <input type="text" placeholder="Enter The Full Name " required>
-                    </br> </br>
-                    <label for="email">Email Address:</label>
-                    <input type="email" placeholder="Enter The Email Address " required>
-                    </br> </br>
-                    <label for="pnumber">Phone Number:</label>
-                    <input type="tel" placeholder="Enter The Phone Number " required>
-                    </br> 
-                    </br> 
-                    <label for="tickets">Number of Tickets:</label>
-                    <input type="number" placeholder="Enter The Number of Tickets " required>
-                    </br> 
-                    </br> 
-                    <label for="stand">Select Stand:</label>
-                    <select name="stand" required>
-                        <option >select stand</option>
-                        <option>General</option>
-                        <option>Premium</option>
-                        <option>VIP</option>
-                    </select>
-                    </br> 
-                    </br>
-                    <button type="submit">Book Ticket</button>
-                </form>
-            </section>
-            <section id="guidelines">
+
+
+            <section id="guide">
                 <h2>Match Guidelines and Stadium Rules</h2>
 
                 <h3>Entry Guidelines</h3>
