@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <header>
         <nav>
             <ul>
@@ -21,6 +22,7 @@
         <h2>Ticket Booking</h2>
 
         <form id="bookings">
+
             <label for="name">Full Name:</label>
             <input type="text" id="name" placeholder="Enter The Full Name" required>
             <br><br>
@@ -33,25 +35,57 @@
             <input type="tel" id="pnumber" placeholder="Enter The Phone Number" required>
             <br><br>
 
-            <label for="tickets">Number of Tickets:</label>
-            <input type="number" id="tickets" placeholder="Enter The Number of Tickets" required>
-            <br><br>
-
-            <label for="stand">Select Stand:</label>
-            <select name="stand" id="stand" required>
-                <option value="">Select stand</option>
-                <option>General</option>
-                <option>Premium</option>
-                <option>VIP</option>
+            <!-- Match Selection -->
+            <label for="match">Select Match:</label>
+            <select id="match" required>
+                <option value="" data-price="0">Select Match</option>
+                <option value="CSK vs MI">CSK vs MI</option>
+                <option value="RCB vs CSK">RCB vs CSK</option>
+                <option value="CSK vs RCB">CSK vs RCB</option>
+                <option value="Punjab vs MI">Punjab vs MI</option>
             </select>
             <br><br>
 
+            <!-- Stand Selection -->
+            <label for="stand">Select Stand:</label>
+            <select id="stand" required>
+                <option value="" data-price="0">Select Stand</option>
+                <option value="General" data-price="1000">General - ₹1,000</option>
+                <option value="Premium" data-price="2500">Premium - ₹2,500</option>
+                <option value="VIP" data-price="5000">VIP - ₹5,000</option>
+            </select>
+            <br><br>
+
+            <!-- Ticket Quantity -->
+            <label for="tickets">Number of Tickets:</label>
+            <input type="number" id="tickets" min="1" value="1" required>
+            <br><br>
+
             <button type="submit">Book Ticket</button>
+
         </form>
+    </section>
+
+    <!-- Booking Summary Card -->
+    <section id="summary">
+        <h2>Booking Summary</h2>
+
+        <div class="summary-card">
+            <p><strong>Match:</strong> <span id="summaryMatch">Not selected</span></p>
+
+            <p><strong>Stand:</strong> <span id="summaryStand">Not selected</span></p>
+
+            <p><strong>Ticket Quantity:</strong> <span id="summaryQuantity">0</span></p>
+
+            <p><strong>Price Per Ticket:</strong> <span id="summaryPrice">₹0</span></p>
+
+            <h3>Total Price: <span id="summaryTotal">₹0</span></h3>
+        </div>
     </section>
 
     <div id="toast" class="toast"></div>
 
     <script src="app.js"></script>
+
 </body>
 </html>
