@@ -224,3 +224,27 @@ footer {
     color: var(--primary);
     font-weight: bold;
 }
+
+
+
+
+/* Activity 5 - Toast Notification */
+
+.toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #222;
+    color: white;
+    padding: 15px 22px;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+}
