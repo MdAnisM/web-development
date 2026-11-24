@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #161616;
+  color: white;
+  padding: 15px 30px;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+nav li {
+  cursor: pointer;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 70px 20px;
+  background-color: #b5121b;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 38px;
+}
+
+.hero button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: #b5121b;
+  cursor: pointer;
+}
+
+/* Matches */
+section:not(.hero) {
+  padding: 20px;
+}
+
+/* Match Cards */
+
+.matches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.match-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 240px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.match-card h3 {
+  color: #b5121b;
+}
+
+.match-card button {
+  background-color: #b5121b;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.match-card button:hover {
+  background-color: #850d14;
+}
+
+.booking-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
