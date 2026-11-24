@@ -1,129 +1,234 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>IPL | TICKET BOOKINGS</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL | TICKET BOOKINGS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-            <nav>
-                <ul>
-                    <li><a href="#">Matches</a></li>
-                    <li><a href="booking.html#booking">Book ticket</a></li>
-                    <li><a href="#">My Bookings</a></li>
-                    <li><a href="#guide">Guidelines</a></li>
-                 </ul>
-            </nav>
-        </header>
-        <main>
-            <section>
-                <img src="assets\ipl2026.png" alt="IPL 2026" width="100%">
-                <h3>Experience The Stadium Energy Live!</h3 >
-                <a href=#schedule>
-                 <button type="submit">View Schedule</button>
-                </a>
-                <a href="booking.html#booking">
-                    <button type="button">Book Ticket</button>
-                </a>
-            </section>
-            <section>
-                <h3> Top IPL  2026  Teams</h3>
-                <form id="matcheslist">
-                  <select>
-                    <option value="">List of popular matches</option>
-                    <option value="">RCB VS MI</option>
-                    <option value="">RCB VS CSK</option>
-                    <option value="">CSK VS MI</option>
-                    <option value="">PANJAB VS MI</option>
-                    <option value="">RCB VS PANJAB</option>
-                  </select>
-                </form>
-            </section>
-            <br>
-            <section id="schedule">
-                <h3>Match Schedule</h3>
-                <table *border*="1">
-                  <tr>
-                    <th>Match Number</th>
-                    <th>Teams</th>
-                    <th>Date & Time</th>
-                    <th>Venue</th>
-                    <th>Ticket Price</th>
-                    <th>Book Now</th>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>CSK vs MI</td>
-                    <td>2026-04-01 19:30</td>
-                    <td>Mumbai</td>
-                    <td>₹5,000</td>
-                    <td><a href="booking.html#booking"><button type="button" class="book-btn">Book Now</button></a></td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>RCB vs CSK</td>
-                    <td>2026-04-02 19:30</td>
-                    <td>Delhi</td>
-                    <td>₹5,000</td>
-                    <td><a href="booking.html#booking"><button type="button" class="book-btn">Book Now</button></a></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>CSK vs RCB</td>
-                    <td>2026-04-03 19:30</td>
-                    <td>Chennai</td>
-                    <td>₹5,000</td>
-                    <td><a href="booking.html#booking"><button type="button" class="book-btn">Book Now</button></a></td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>PANJAB vs MI</td>
-                    <td>2026-04-04 19:30</td>
-                    <td>Chandigarh</td>
-                    <td>₹5,000</td>
-                    <td><a href="booking.html#booking"><button type="button" class="book-btn">Book Now</button></a></td>
-                  </tr>
-                </table>
-            </section>
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+        <nav class="navbar">
+
+            <h2 class="logo">IPL 2026</h2>
+
+            <!-- Hamburger Menu -->
+            <button type="button" class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#schedule">Matches</a></li>
+                <li><a href="booking.html#booking">Book Ticket</a></li>
+                <li><a href="#">My Bookings</a></li>
+                <li><a href="#guide">Guidelines</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+
+            <img src="assets/ipl2026.png" alt="IPL 2026" width="100%">
+
+            <h3>Experience The Stadium Energy Live!</h3>
+
+            <a href="#schedule">
+                <button type="button">View Schedule</button>
+            </a>
+
+            <a href="booking.html#booking">
+                <button type="button">Book Ticket</button>
+            </a>
+
+        </section>
 
 
-            <section id="guide">
-                <h2>Match Guidelines and Stadium Rules</h2>
+        <!-- Popular Teams / Team Filter -->
+        <section id="matcheslist">
 
-                <h3>Entry Guidelines</h3>
-                <ul>
-                    <li>Carry a valid match ticket for entry.</li>
-                    <li>Carry a valid government-issued photo ID.</li>
-                    <li>Arrive at the stadium well before match time.</li>
-                 <li>Follow security checking procedures.</li>
-                </ul>
+            <h3>Top IPL 2026 Teams</h3>
 
-                 <h3>Prohibited Items</h3>
-                <ul>
-                    <li>Outside food and beverages may not be permitted.</li>
-                    <li>Weapons and sharp objects are prohibited.</li>
-                    <li>Fireworks and dangerous materials are prohibited.</li>
-                    <li>Professional cameras may require special permission.</li>
-                </ul>
+            <div class="schedule-controls">
 
-                <h3>General Instructions</h3>
-                <ul>
-                  <li>Follow instructions given by stadium officials.</li>
-                  <li>Do not damage stadium property.</li>
-                  <li>Maintain cleanliness inside the stadium.</li>
-                  <li>Do not enter restricted areas.</li>
-                  <li>Tickets are subject to the stadium's terms and conditions.</li>
-                </ul>
-            </section>
+                <select id="teamFilter">
+                    <option value="all">All Teams / Matches</option>
+                    <option value="RCB">RCB Matches</option>
+                    <option value="CSK">CSK Matches</option>
+                    <option value="MI">MI Matches</option>
+                    <option value="Punjab">Punjab Matches</option>
+                </select>
+
+                <!-- Grid and List View Buttons -->
+                <div class="view-buttons">
+                    <button type="button" id="gridView">Grid View</button>
+                    <button type="button" id="listView">List View</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Match Schedule -->
+        <section id="schedule">
+
+            <h2>Match Schedule</h2>
+
+            <div class="match-container grid-view" id="matchContainer">
+
+                <!-- Match 1 -->
+                <div class="match-card" data-teams="CSK MI">
+
+                    <h3>Match 1</h3>
+                    <h2>CSK vs MI</h2>
+
+                    <p><strong>Date & Time:</strong> 2026-04-01 19:30</p>
+                    <p><strong>Venue:</strong> Mumbai</p>
+                    <p><strong>Ticket Price:</strong> ₹5,000</p>
+
+                    <a href="booking.html#booking">
+                        <button type="button" class="book-btn">Book Now</button>
+                    </a>
+
+                </div>
+
+
+                <!-- Match 2 -->
+                <div class="match-card" data-teams="RCB CSK">
+
+                    <h3>Match 2</h3>
+                    <h2>RCB vs CSK</h2>
+
+                    <p><strong>Date & Time:</strong> 2026-04-02 19:30</p>
+                    <p><strong>Venue:</strong> Delhi</p>
+                    <p><strong>Ticket Price:</strong> ₹5,000</p>
+
+                    <a href="booking.html#booking">
+                        <button type="button" class="book-btn">Book Now</button>
+                    </a>
+
+                </div>
+
+
+                <!-- Match 3 -->
+                <div class="match-card" data-teams="CSK RCB">
+
+                    <h3>Match 3</h3>
+                    <h2>CSK vs RCB</h2>
+
+                    <p><strong>Date & Time:</strong> 2026-04-03 19:30</p>
+                    <p><strong>Venue:</strong> Chennai</p>
+                    <p><strong>Ticket Price:</strong> ₹5,000</p>
+
+                    <a href="booking.html#booking">
+                        <button type="button" class="book-btn">Book Now</button>
+                    </a>
+
+                </div>
+
+
+                <!-- Match 4 -->
+                <div class="match-card" data-teams="Punjab MI">
+
+                    <h3>Match 4</h3>
+                    <h2>Punjab vs MI</h2>
+
+                    <p><strong>Date & Time:</strong> 2026-04-04 19:30</p>
+                    <p><strong>Venue:</strong> Chandigarh</p>
+                    <p><strong>Ticket Price:</strong> ₹5,000</p>
+
+                    <a href="booking.html#booking">
+                        <button type="button" class="book-btn">Book Now</button>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Guidelines Section -->
+        <section id="guide">
+
+            <h2>Match Guidelines and Stadium Rules</h2>
+
+            <div class="guidelines-container">
+
+
+                <!-- Entry Guidelines -->
+                <div class="guideline-card">
+
+                    <h3>Entry Guidelines</h3>
+
+                    <ul>
+                        <li>Carry a valid match ticket for entry.</li>
+                        <li>Carry a valid government-issued photo ID.</li>
+                        <li>Arrive at the stadium well before match time.</li>
+                        <li>Follow security checking procedures.</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- Prohibited Items -->
+                <div class="guideline-card">
+
+                    <h3>Prohibited Items</h3>
+
+                    <ul>
+                        <li>Outside food and beverages may not be permitted.</li>
+                        <li>Weapons and sharp objects are prohibited.</li>
+                        <li>Fireworks and dangerous materials are prohibited.</li>
+                        <li>Professional cameras may require special permission.</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- General Instructions -->
+                <div class="guideline-card">
+
+                    <h3>General Instructions</h3>
+
+                    <ul>
+                        <li>Follow instructions given by stadium officials.</li>
+                        <li>Do not damage stadium property.</li>
+                        <li>Maintain cleanliness inside the stadium.</li>
+                        <li>Do not enter restricted areas.</li>
+                        <li>Tickets are subject to the stadium's terms and conditions.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
-    </br></br>
+
+
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2026 IPL Ticket Booking. All Rights Are Reserved.</p>
+        <p>&copy; 2026 IPL Ticket Booking. All Rights Are Reserved.</p>
     </footer>
+
+
+    <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
 
+
+    <!-- JavaScript -->
     <script src="app.js"></script>
+
 </body>
 </html>

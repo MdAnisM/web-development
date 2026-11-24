@@ -115,3 +115,67 @@ if (
     // Initial update without toast
     updateBookingSummary(false);
 }
+
+
+
+
+/* =================================
+   ACTIVITY 8: RESPONSIVE INTERACTION
+================================= */
+
+// Hamburger Menu
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+
+        if (navLinks.classList.contains("active")) {
+            menuToggle.textContent = "✕";
+        } else {
+            menuToggle.textContent = "☰";
+        }
+    });
+}
+
+// Team Filter
+const teamFilter = document.getElementById("teamFilter");
+const matchCards = document.querySelectorAll(".match-card");
+
+if (teamFilter) {
+    teamFilter.addEventListener("change", function () {
+        const selectedTeam = teamFilter.value;
+
+        matchCards.forEach(function (card) {
+            const teams = card.dataset.teams;
+
+            if (selectedTeam === "all" || teams.includes(selectedTeam)) {
+                card.classList.remove("hidden");
+            } else {
+                card.classList.add("hidden");
+            }
+        });
+    });
+}
+
+// Grid and List View
+const matchContainer = document.getElementById("matchContainer");
+const gridViewBtn = document.getElementById("gridView");
+const listViewBtn = document.getElementById("listView");
+
+if (matchContainer && gridViewBtn && listViewBtn) {
+
+    gridViewBtn.addEventListener("click", function () {
+        matchContainer.classList.remove("list-view");
+        matchContainer.classList.add("grid-view");
+        showToast("Grid view enabled!");
+    });
+
+    listViewBtn.addEventListener("click", function () {
+        matchContainer.classList.remove("grid-view");
+        matchContainer.classList.add("list-view");
+        showToast("List view enabled!");
+    });
+}
+

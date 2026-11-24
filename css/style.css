@@ -268,3 +268,151 @@ footer {
 #summaryTotal {
     font-weight: bold;
 }
+
+
+
+
+/* ===== ACTIVITY 8: RESPONSIVE LAYOUT ===== */
+
+/* Navbar - Flexbox */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 25px;
+}
+
+.logo {
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+/* Schedule controls */
+.schedule-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.view-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Match Cards - CSS Grid */
+.match-container.grid-view {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.match-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.match-card.hidden {
+    display: none;
+}
+
+/* List View */
+.match-container.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.match-container.list-view .match-card {
+    width: 100%;
+}
+
+/* Guidelines - 3 column Grid */
+.guidelines-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.guideline-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Tablet Layout */
+@media (max-width: 900px) {
+    .match-container.grid-view {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .guidelines-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile Layout */
+@media (max-width: 600px) {
+
+    .navbar {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 15px;
+        padding-top: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .match-container.grid-view {
+        grid-template-columns: 1fr;
+    }
+
+    .guidelines-container {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-controls {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .view-buttons {
+        flex-wrap: wrap;
+    }
+
+    .match-card,
+    .guideline-card {
+        width: 100%;
+    }
+}
